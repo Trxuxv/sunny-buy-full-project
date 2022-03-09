@@ -1,0 +1,74 @@
+<div class="pix-page">
+    <div class="pix-header">
+        <div class="card mt-100 mb-100">
+            <h1 class="title">Pix</h1>
+            <div class="billet-model">
+                <div class="container">
+                    <div class="nav-item">
+                        <div class="data-item">
+                            <p>{{client.name}}</p>
+                            <p>{{client.email}}</p>
+                            <hr>
+                            <p>
+                                Bank agency
+                                <b>
+                                    <img class="logo" src="assets/payment/billet/logo.png" alt="">
+                                </b>
+                            </p>
+                            <p>
+                                Emission date:
+                                <b>{{date_time}}</b>
+                            </p>
+                            <hr>
+                            <p>
+                                Amount to pay:
+                                <b class="total-n">
+                                    ${{total}}.00
+                                </b>
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="item pix-code">
+                        <div>
+                            <hr>
+                            <ngx-qrcode [elementType]="elementType" [errorCorrectionLevel]="correctionLevel"
+                                [value]="value" cssClass="bshadow"></ngx-qrcode>
+                            {{code}}
+                            <hr>
+                        </div>
+                    </div>
+                    <hr>
+
+                    <div class="card-btn">
+                        <button class="cancel" routerLink="/cart" mat-raised-button>Cancel</button>
+                        <button *ngIf="client.address !== null" class="next" (click)="postPurchasePix()"
+                            mat-raised-button>Next</button>
+
+                        <button *ngIf="client.address == null" class="next" data-toggle="modal"
+                            data-target="#exampleModalCenter" mat-raised-button>Next</button>
+                        <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog"
+                            aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                            <div class="modal-dialog modal-dialog-centered" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <div class="saved-cards">
+                                            <div class="row row-1 address">
+                                                <h4 class="h4">Not so fast</h4>
+                                                <p class="p">
+                                                    You do not have any address registered :c
+                                                </p>
+                                                <button mat-raised-button routerLink="/client" data-dismiss="modal"
+                                                    class="btn-address">Add Address</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

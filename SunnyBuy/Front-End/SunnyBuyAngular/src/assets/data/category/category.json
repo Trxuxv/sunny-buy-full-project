@@ -1,0 +1,22 @@
+[
+    {
+        "categoryId": "1",
+        "description": "Computer"
+    },
+    {
+        "categoryId": "2",
+        "description": "Notebook"
+    },
+    {
+        "categoryId": "3",
+        "description": "Acessorie"
+    },
+    {
+        "categoryId": "4",
+        "description": "Smartphone"
+    },
+    {
+        "categoryId": "5",
+        "description": "Tablet"
+    }
+]
